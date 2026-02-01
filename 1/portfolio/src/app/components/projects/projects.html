@@ -1,0 +1,17 @@
+<section class="container my-5">
+  <h2 class="text-center mb-5" style="color: #789A99;">Previous Projects</h2>
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let p of projectsList">
+      <div class="card h-100 shadow-sm border-0">
+        <img [src]="p.image" class="card-img-top" alt="project">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #789A99;">{{ p.title }}</h5>
+          <p class="card-text text-muted">{{ p.description }}</p>
+        </div>
+        <div class="card-footer bg-white border-0 pb-3">
+          <button class="btn w-100" style="background-color: #FFD2C2;">View Project</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

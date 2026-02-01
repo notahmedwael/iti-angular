@@ -1,0 +1,12 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-about',
+  standalone: true,
+  templateUrl: './about.html',
+  styleUrl: './about.scss'
+})
+export class AboutComponent {
+  @Input() education: string = '';
+  @Input() experience: string = '';
+}

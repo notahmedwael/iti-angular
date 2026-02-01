@@ -1,0 +1,17 @@
+<section class="container my-5 py-5 rounded" style="background-color: #f8f9fa; border-left: 10px solid #FFD2C2;">
+  <h2 class="text-center mb-5" style="color: #789A99;">My Skills</h2>
+  <div class="row px-4">
+    <div class="col-md-6 mb-4" *ngFor="let skill of skillsList">
+      <div class="d-flex justify-content-between">
+        <span class="fw-bold">{{ skill.name }}</span>
+        <span>{{ skill.level }}%</span>
+      </div>
+      <div class="progress" style="height: 12px;">
+        <div class="progress-bar shadow-sm" role="progressbar" 
+             [style.width]="skill.level + '%'"
+             [style.background-color]="'#789A99'">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
