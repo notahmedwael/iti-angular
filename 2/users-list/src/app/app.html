@@ -1,0 +1,59 @@
+<div class="min-h-screen bg-gray-100 p-8">
+  <div class="max-w-6xl mx-auto">
+    
+    <div class="flex flex-col md:flex-row items-center justify-between mb-8 gap-4 bg-white p-6 rounded-xl shadow-sm">
+      <h1 class="text-2xl font-bold text-gray-800">User List</h1>
+      
+      <div class="flex items-center gap-2 w-full md:w-1/2">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Search by Email</mat-label>
+          <input matInput [(ngModel)]="searchQuery" (input)="onSearch()" placeholder="e.g. mike@firm.com">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <button *ngIf="searchQuery" mat-flat-button color="warn" (click)="resetSearch()" class="h-[56px]">
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <mat-card *ngFor="let user of filteredUsers" class="overflow-hidden !rounded-2xl shadow-md border-0">
+        <div class="h-2 bg-indigo-500"></div>
+        <mat-card-content class="p-6">
+          <div class="flex items-center gap-4 mt-3 mb-4">
+            <img [src]="user.image" [alt]="user.name" class="w-16 h-16 rounded-full border-2 border-gray-200">
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 mb-1">{{ user.name }}</h3>
+              <mat-chip-listbox>
+                <mat-chip [class]="getRoleClass(user.role)">
+                  {{ user.role | uppercase }}
+                </mat-chip>
+              </mat-chip-listbox>
+            </div>
+          </div>
+
+          <div class="space-y-2 text-sm text-gray-600">
+            <div class="flex items-center gap-2">
+              <mat-icon class="text-gray-400 !text-lg">email</mat-icon>
+              <span>{{ user.email }}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <mat-icon class="text-gray-400 !text-lg">phone</mat-icon>
+              <span>{{ user.phone }}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <mat-icon class="text-gray-400 !text-lg">cake</mat-icon>
+              <span>{{ user.birthdate | date:'mediumDate' }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="filteredUsers.length === 0" class="text-center py-20">
+      <p class="text-xl text-gray-500">No users found matching "{{searchQuery}}"</p>
+    </div>
+
+  </div>
+</div>

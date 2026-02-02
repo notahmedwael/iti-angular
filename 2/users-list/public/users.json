@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Ahmed Wael",
+    "email": "ahmed.wael@iti.gov.eg",
+    "phone": "01012345678",
+    "birthdate": "1998-05-20",
+    "role": "admin",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed"
+  },
+  {
+    "id": 2,
+    "name": "Sara Smith",
+    "email": "sara.smith@gmail.com",
+    "phone": "01122334455",
+    "birthdate": "1995-12-10",
+    "role": "user",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sara"
+  },
+  {
+    "id": 3,
+    "name": "Mike Ross",
+    "email": "m.ross@pearsonhardman.com",
+    "phone": "01299887766",
+    "birthdate": "1990-03-15",
+    "role": "moderator",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Mike"
+  },
+  {
+    "id": 4,
+    "name": "Jane Doe",
+    "email": "jane.doe@outlook.com",
+    "phone": "01555443322",
+    "birthdate": "1993-07-22",
+    "role": "user",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Jane"
+  },
+  {
+    "id": 5,
+    "name": "Omar Khaled",
+    "email": "o.khaled@techmail.net",
+    "phone": "01066778899",
+    "birthdate": "1997-01-30",
+    "role": "admin",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Omar"
+  },
+  {
+    "id": 6,
+    "name": "Elena Gilbert",
+    "email": "elena.g@mystic.com",
+    "phone": "01144556677",
+    "birthdate": "1992-06-18",
+    "role": "user",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Elena"
+  },
+  {
+    "id": 7,
+    "name": "Layla Mahmoud",
+    "email": "layla.m@company.org",
+    "phone": "01211223344",
+    "birthdate": "1996-11-05",
+    "role": "moderator",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Layla"
+  },
+  {
+    "id": 8,
+    "name": "David Chen",
+    "email": "d.chen@global.io",
+    "phone": "01588990011",
+    "birthdate": "1988-09-12",
+    "role": "user",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=David"
+  },
+  {
+    "id": 9,
+    "name": "Youssef Ali",
+    "email": "y.ali@developer.com",
+    "phone": "01000998877",
+    "birthdate": "1994-04-03",
+    "role": "admin",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Youssef"
+  },
+  {
+    "id": 10,
+    "name": "Mona Zaki",
+    "email": "mona.z@freelance.com",
+    "phone": "01122339900",
+    "birthdate": "1991-08-25",
+    "role": "user",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Mona"
+  },
+  {
+    "id": 11,
+    "name": "Harvey Specter",
+    "email": "harvey@closer.com",
+    "phone": "01255667788",
+    "birthdate": "1985-12-30",
+    "role": "moderator",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Harvey"
+  },
+  {
+    "id": 12,
+    "name": "Nour El-Din",
+    "email": "nour.din@startups.eg",
+    "phone": "01511224466",
+    "birthdate": "1999-02-14",
+    "role": "user",
+    "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Nour"
+  }
+]
