@@ -1,0 +1,94 @@
+[
+    {
+        "id": 1,
+        "name": "Steam $50 Wallet Code",
+        "category": "Gift Cards",
+        "brand": "Valve",
+        "price": 2500,
+        "discountPercentage": 5,
+        "rating": 5,
+        "description": "Instant digital delivery. Use it to buy any game or in-game item on the Steam platform.",
+        "stock": 50,
+        "image": "/products/1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Xbox Game Pass Ultimate - 3 Months",
+        "category": "Subscriptions",
+        "brand": "Microsoft",
+        "price": 1200,
+        "rating": 4,
+        "description": "Includes Xbox Live Gold and over 100 high-quality games on console and PC.",
+        "stock": 0,
+        "image": "/products/2.png"
+    },
+    {
+        "id": 3,
+        "name": "PlayStation Plus Essential (12 Months)",
+        "category": "Subscriptions",
+        "brand": "Sony",
+        "price": 3500,
+        "discountPercentage": 15,
+        "rating": 4,
+        "description": "Enhance your PlayStation experience with online multiplayer and monthly games.",
+        "stock": 25,
+        "image": "/products/3.png"
+    },
+    {
+        "id": 4,
+        "name": "Razer DeathAdder V3 Pro",
+        "category": "Hardware",
+        "brand": "Razer",
+        "price": 7500,
+        "rating": 5,
+        "description": "Ultra-lightweight wireless ergonomic esports mouse with 30K DPI sensor.",
+        "stock": 5,
+        "image": "/products/4.avif"
+    },
+    {
+        "id": 5,
+        "name": "Fortnite 2800 V-Bucks",
+        "category": "In-Game",
+        "brand": "Epic Games",
+        "price": 950,
+        "discountPercentage": 10,
+        "rating": 4,
+        "description": "V-Bucks can be spent in the Battle Royale, Creative, and Save the World modes.",
+        "stock": 100,
+        "image": "/products/5.avif"
+    },
+    {
+        "id": 6,
+        "name": "Logitech G502 LIGHTSPEED",
+        "category": "Hardware",
+        "brand": "Logitech G",
+        "price": 6200,
+        "discountPercentage": 20,
+        "rating": 5,
+        "description": "The world's most popular gaming mouse, now with LIGHTSPEED wireless technology.",
+        "stock": 8,
+        "image": "/products/6.avif"
+    },
+    {
+        "id": 7,
+        "name": "Nintendo eShop $20 Card",
+        "category": "Gift Cards",
+        "brand": "Nintendo",
+        "price": 1000,
+        "rating": 3,
+        "description": "The perfect gift for anyone who loves to play—including you. Choose from over 1,000 games.",
+        "stock": 0,
+        "image": "/products/7.png"
+    },
+    {
+        "id": 8,
+        "name": "Discord Nitro (1 Month)",
+        "category": "Software",
+        "brand": "Discord",
+        "price": 450,
+        "rating": 4,
+        "description": "Unlock premium perks like global emojis, bigger file uploads, and HD video streaming.",
+        "stock": 200,
+        "image": "/products/8.jpg"
+    }
+]
