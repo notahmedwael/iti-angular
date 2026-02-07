@@ -1,0 +1,102 @@
+<div class="min-h-screen bg-slate-50 p-8 flex justify-center">
+    <div class="max-w-3xl w-full bg-white p-10 rounded-3xl shadow-2xl">
+        <h2 class="text-4xl font-black text-slate-900 mb-8 italic uppercase tracking-tighter">Join G-Store</h2>
+
+        @if (regError) {
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded shadow-sm animate-pulse">
+                <p class="text-red-700 text-sm font-bold">{{ regError }}</p>
+            </div>
+        }
+
+        <form [formGroup]="regForm" (ngSubmit)="onRegister()">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-xs font-bold mb-1 uppercase text-slate-500">Full Name</label>
+                    <input formControlName="name" placeholder="John Doe" 
+                        class="w-full border-2 p-3 rounded-xl focus:border-orange-500 outline-none transition-all"
+                        [class.border-red-500]="isInvalid('name')">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold mb-1 uppercase text-slate-500">Username</label>
+                    <input formControlName="username" placeholder="johndoe123" 
+                        class="w-full border-2 p-3 rounded-xl focus:border-orange-500 outline-none transition-all"
+                        [class.border-red-500]="isInvalid('username')">
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-xs font-bold mb-1 uppercase text-slate-500">Email Address</label>
+                <input formControlName="email" type="email" placeholder="john@example.com" 
+                    class="w-full border-2 p-3 rounded-xl focus:border-orange-500 outline-none transition-all"
+                    [class.border-red-500]="isInvalid('email')">
+            </div>
+
+            <div class="mb-8">
+                <label class="block text-xs font-bold mb-1 uppercase text-slate-500">Password</label>
+                <input formControlName="password" type="password" placeholder="••••••••" 
+                    class="w-full border-2 p-3 rounded-xl focus:border-orange-500 outline-none transition-all"
+                    [class.border-red-500]="isInvalid('password')"
+                    [class.border-green-500]="regForm.get('password')!.valid && regForm.get('password')!.dirty">
+
+                <div class="mt-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <p class="text-[10px] font-black uppercase text-slate-400 mb-2 tracking-widest">Security Checklist</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <li class="flex items-center text-[11px] font-bold transition-colors"
+                            [class.text-green-600]="(passwordControl?.value?.length ?? 0) >= 8"
+                            [class.text-slate-400]="(passwordControl?.value?.length ?? 0) < 8">
+                            <span class="mr-2">
+                                {{ (passwordControl?.value?.length ?? 0) >= 8 ? '✓' : '○' }}
+                            </span>
+                            8+ Characters
+                        </li>
+
+                        <li class="flex items-center text-[11px] font-bold transition-colors"
+                            [class.text-green-600]="passwordControl?.valid && passwordControl?.dirty"
+                            [class.text-slate-400]="!passwordControl?.valid">
+                            <span class="mr-2">
+                                {{ passwordControl?.valid && passwordControl?.dirty ? '✓' : '○' }}
+                            </span>
+                            Complexity (A, a, 1, @)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t-2 border-dashed border-slate-200 pt-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-black text-slate-800 uppercase italic">Shipping</h3>
+                    <button type="button" (click)="addAddress()"
+                        class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-black hover:bg-orange-500 transition-all active:scale-95">
+                        + ADD ADDRESS
+                    </button>
+                </div>
+
+                <div formArrayName="addresses" class="space-y-4">
+                    @for (addr of addresses.controls; track $index) {
+                        <div [formGroupName]="$index" class="p-5 bg-slate-50 rounded-2xl relative border-2 border-transparent hover:border-slate-200 transition-all">
+                            <button type="button" (click)="removeAddress($index)"
+                                class="absolute top-3 right-5 text-slate-400 hover:text-red-500 font-black transition-colors">REMOVE</button>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="col-span-2">
+                                    <input formControlName="address" placeholder="Building / Apt / House No." class="w-full p-2 border-b-2 bg-transparent outline-none focus:border-orange-500 text-sm">
+                                </div>
+                                <input formControlName="street" placeholder="Street Name" class="p-2 border-b-2 bg-transparent outline-none focus:border-orange-500 text-sm">
+                                <input formControlName="city" placeholder="City" class="p-2 border-b-2 bg-transparent outline-none focus:border-orange-500 text-sm">
+                                <input formControlName="country" placeholder="Country" class="p-2 border-b-2 bg-transparent outline-none focus:border-orange-500 text-sm">
+                            </div>
+                        </div>
+                    } @empty {
+                        <p class="text-center text-slate-400 text-xs py-4 border-2 border-dotted border-slate-200 rounded-xl">No shipping addresses added yet.</p>
+                    }
+                </div>
+            </div>
+
+            <button type="submit"
+                class="w-full bg-orange-500 text-white text-xl font-black py-4 rounded-2xl shadow-xl shadow-orange-200 mt-10 hover:bg-orange-600 hover:-translate-y-1 transition-all active:scale-95">
+                CREATE ACCOUNT
+            </button>
+        </form>
+    </div>
+</div>

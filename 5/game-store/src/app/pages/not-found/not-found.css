@@ -1,0 +1,9 @@
+:host {
+    display: block;
+    background-color: #f8fafc;
+}
+
+h1 {
+    user-select: none;
+    filter: drop-shadow(4px 4px 0px #f97316);
+}

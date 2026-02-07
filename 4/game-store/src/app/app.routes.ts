@@ -1,19 +1,43 @@
+import { NotFound } from './pages/not-found/not-found';
 import { Routes } from '@angular/router';
+import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'products', pathMatch: 'full' },
+    
     {
         path: 'products',
-        loadComponent: () => import('../app/pages/products/products').then(m => m.ProductsComponent)
+        loadComponent: () => import('./pages/products/products').then(m => m.ProductsComponent)
     },
+    
+    // Protected Route
     {
         path: 'product/:id',
-        loadComponent: () => import('../app/pages/product-details/product-details').then(m => m.ProductDetailsComponent)
+        canActivate: [authGuard],
+        loadComponent: () => import('./pages/product-details/product-details').then(m => m.ProductDetailsComponent)
     },
     
-    // I will implement them next lab isa
-    { path: 'cart', loadComponent: () => import('../app/pages/products/products').then(m => m.ProductsComponent) },
-    { path: 'login', loadComponent: () => import('../app/pages/products/products').then(m => m.ProductsComponent) },
+    // Auth Routes
+    {
+        path: 'login',
+        loadComponent: () => import('./pages/login/login').then(m => m.LoginComponent)
+    },
+    {
+        path: 'register',
+        loadComponent: () => import('./pages/register/register').then(m => m.RegisterComponent)
+    },
+
+    {
+        path: 'not-found',
+        loadComponent: () => import('./pages/not-found/not-found').then(m => m.NotFound)
+    },
+
+    // I will add it soon isa
+    {
+        path: 'cart',
+        loadComponent: () => import('./pages/products/products').then(m => m.ProductsComponent)
+    },
     
-    { path: '**', redirectTo: 'products' }
+    // Wildcard
+    { path: '**', redirectTo: 'not-found' }
 ];
