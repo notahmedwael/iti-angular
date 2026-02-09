@@ -13,7 +13,14 @@ import { CommonModule } from '@angular/common';
       
       <div class="flex items-center gap-6">
         <a routerLink="/products" routerLinkActive="text-orange-500" class="font-bold hover:text-orange-400 transition-colors">Store</a>
-        
+        <a routerLink="/cart" class="relative group">
+          <span class="font-bold group-hover:text-orange-500">Cart</span>
+          @if (auth.currentUser()?.cart?.length) {
+            <span class="absolute -top-3 -right-4 bg-orange-500 text-white text-[10px] font-black px-1.5 py-0.5 rounded-full">
+              {{ auth.currentUser().cart.length }}
+            </span>
+          }
+        </a>
         @if (auth.currentUser()) {
           <div class="flex items-center gap-4 bg-slate-800 p-1 pl-4 rounded-full border border-slate-700">
             <span class="text-xs uppercase tracking-wider font-medium">

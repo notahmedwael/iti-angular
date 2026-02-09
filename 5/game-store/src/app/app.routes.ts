@@ -1,4 +1,4 @@
-import { NotFound } from './pages/not-found/not-found';
+import { CartComponent } from './pages/cart/cart';
 import { Routes } from '@angular/router';
 import { authGuard } from './guards/auth-guard';
 
@@ -32,11 +32,8 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/not-found/not-found').then(m => m.NotFound)
     },
 
-    // I will add it soon isa
-    {
-        path: 'cart',
-        loadComponent: () => import('./pages/products/products').then(m => m.ProductsComponent)
-    },
+    // Cart page
+    { path: 'cart', component: CartComponent, canActivate: [authGuard] },
     
     // Wildcard
     { path: '**', redirectTo: 'not-found' }

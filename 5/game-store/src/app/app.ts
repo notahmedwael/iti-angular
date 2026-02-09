@@ -17,7 +17,7 @@ import { NavbarComponent } from '../app/components/navbar/navbar';
       <footer class="bg-brand-dark text-gray-400 py-8 border-t border-gray-700">
         <div class="container mx-auto px-10 text-center">
           <p class="font-bold text-brand-orange mb-2 italic">G-STORE 2026</p>
-          <p class="text-sm">Built with Angular & Tailwind.</p>
+          <p class="text-sm">Built with Angular & Tailwind</p>
         </div>
       </footer>
     </div>

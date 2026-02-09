@@ -30,4 +30,13 @@ export class AuthService {
     this.currentUser.set(null);
     this.router.navigate(['/login']); // Redirect to login
   }
+  updateUser(updatedUser: any) {
+  this.currentUser.set(updatedUser);
+  const allUsers = JSON.parse(localStorage.getItem('allUsers') || '[]');
+  const index = allUsers.findIndex((u: any) => u.username === updatedUser.username);
+  if (index !== -1) {
+    allUsers[index] = updatedUser;
+    localStorage.setItem('allUsers', JSON.stringify(allUsers));
+  }
+}
 }
